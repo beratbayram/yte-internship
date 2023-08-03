@@ -1,28 +1,27 @@
-'use client'
+"use client";
 
-import {useState} from "react";
-import FormElement from './FormElement';
+import ChildrenExample from "./ChildrenExample";
+import ContextExample from "./ContextExample";
+import FormExample from "./FormExample";
+import UseEffectExample from "./UseEffectExample";
+import { ThemeContext } from "./themeContext";
 
 export default function Home() {
+  return (
+    <main>
+      <ThemeContext.Provider value={"light"}>
+        <FormExample />
+        <hr />
+        <hr />
+        <ContextExample />
+        <hr />
+        <ChildrenExample label="Hello World">
+          <p>Some content</p>
+          <p>Some content</p>
+          <UseEffectExample />
 
-    const [count, setCount] = useState(0);
-    const [name, setName] = useState("");
-    const [companyName, setCompanyName] = useState("");
-    const [adres, setAdres] = useState("");
-
-    console.log(name, companyName, adres);
-
-    const handleClick = () => {
-        setCount(count + 1);
-    }
-
-    return (
-        <main >
-            <FormElement myLabel='ad-soyad' inputHandler={setName}/>
-            <FormElement myLabel='şirket adı' inputHandler={setCompanyName}/>
-            <FormElement myLabel="adres" inputHandler={setAdres}/>
-            <h2>{count}</h2>
-            <button onClick={handleClick}>Merhaba</button>
-        </main>
-    )
+        </ChildrenExample>
+      </ThemeContext.Provider>
+    </main>
+  );
 }
