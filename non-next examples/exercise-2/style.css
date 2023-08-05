@@ -1,0 +1,24 @@
+table {
+  background-color: yellow;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+}
+
+.blue {
+  background-color: aqua;
+}
+
+.blue:hover {
+  background-color: orange;
+}
+
+#green {
+  background-color: green;
+}
+
+#green:active {
+  background-color: red;
+}
